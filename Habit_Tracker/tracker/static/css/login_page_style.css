@@ -1,0 +1,148 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f1dede, #e3cad6, #f2e8ea);
+}
+
+.outer-scope-centered, input[type="text"],
+input[type="password"], .btn-login-btn {
+    background: linear-gradient(to bottom, #f2d1dd, #db86a3, #7196c0);
+}
+
+input[type="text"], input[type="password"], .btn-login-btn {
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid grey;
+    padding-left: 0.5em;
+    color: white;
+    font-family: 'Roboto Serif', serif;
+}
+
+.dashboard-outer-scope-centered {
+    width: 405px;
+    height: 470px;
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 0.5em;
+}
+
+.btn-login-btn {
+    border-radius: 1em;
+}
+
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.shadow-box-login-form {
+    border-radius: 2em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.login-image-above img {
+    position: absolute;
+    top: 210px;
+    left: 741px;
+    width: 438px;
+    height: 245px;
+    z-index: 12;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+
+.outer-scope-centered {
+    position: relative;
+    z-index: 10;
+    width: 405px;
+    height: 450px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1em 1em 1em 1.1em;
+    border-radius: 2em;
+}
+
+.card-title {
+    padding: 17em 0;
+}
+
+.username, .password {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+
+}
+
+.username {
+    margin-top: -2.5em;
+}
+
+input::placeholder {
+    font-family: 'Roboto Serif', serif;
+    color: white;
+}
+
+input::placeholder:hover {
+    border: 1px solid grey;
+}
+
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto 0 auto;
+    position: relative;
+    bottom: 40px;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
+.register-account span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5em;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    position: relative;
+    bottom: 50px;
+}
+
+.register-account span a {
+    padding-left: 1em;
+    text-decoration: none;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    position: relative;
+    bottom: 40px;
+}
+
+.errorlist {
+    padding-left: 0;
+    text-align: center;
+}
+
+.error li{
+    list-style-type: none;
+    padding: 0;
+    color: red;
+}
+

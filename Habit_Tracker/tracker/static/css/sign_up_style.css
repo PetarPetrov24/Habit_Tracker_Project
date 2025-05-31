@@ -1,0 +1,130 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f1dede, #e3cad6, #f2e8ea);
+}
+
+.outer-scope-centered, input[name="username"],
+input[name="password1"], input[name="password2"], .sign-up-btn {
+    background: linear-gradient(to bottom, #f2d1dd, #db86a3, #7196c0);
+    font-family: 'Roboto Serif', serif;
+}
+
+input[name="username"],
+input[name="password1"], input[name="password2"], .sign-up-btn {
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid gray;
+}
+
+.dashboard-outer-scope-centered {
+    width: 405px;
+    height: 470px;
+}
+
+.sign-up-btn {
+    border-radius: 1em;
+}
+
+input[name="username"],
+input[name="password1"], input[name="password2"] {
+    border-radius: 0.5em;
+}
+
+input::placeholder {
+    color: white;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[name="username"],
+input[name="password1"],
+input[name="password2"] {
+    padding-left: 0.5em;
+    color: white;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.shadow-box-sign-up-form {
+    border-radius: 2em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.outer-scope-centered {
+    position: relative;
+    z-index: 10;
+    width: 405px;
+    height: 470px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1em 1em 1em 1.1em;
+    border-radius: 2em;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 32px;
+}
+
+.sign-up-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-up-data label:not(:first-child) {
+    padding-top: 2em;
+}
+
+.signup-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6%;
+}
+
+.sign-up-btn {
+    color: white;
+    cursor: pointer;
+}
+
+.register-account span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4%;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.register-account span a {
+    padding-left: 1em;
+    text-decoration: none;
+}
+
+ul.errorlist {
+  margin-top: 0.1em;
+  list-style: none;
+  color: red;
+  font-size: 0.9em;
+}
+
+
+
+
+
