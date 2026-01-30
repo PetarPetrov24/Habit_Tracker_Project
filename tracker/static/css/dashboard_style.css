@@ -1,0 +1,173 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f1dede, #e3cad6, #f2e8ea);
+}
+
+
+.dashboard-outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.shadow-box-dashboard-form {
+    border-radius: 2em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-outer-scope-centered {
+    display: flex;
+    width: 405px;
+    height: 470px;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(to bottom, #f2d1dd, #db86a3, #7196c0);
+    padding: 1em 1em 1em 1.1em;
+    border-radius: 2em;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 28px;
+}
+
+.dashboard-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.habit-rows-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0.5em;
+}
+
+.habit-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.habit-row label {
+  flex-grow: 1;
+}
+
+.btn-add-habit, .btn-logout, .delete-account-btn {
+    background: linear-gradient(to bottom, #f2d1dd, #db86a3, #7196c0);
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 1em;
+    color: white;
+    border: 1px solid gray;
+}
+
+.habit-checkbox-data {
+    margin-bottom: 1em;
+}
+
+.habit-content input[type="checkbox"] {
+    margin-left: 1.8em;
+}
+
+.category, .habit-data, .difficulty {
+    padding-left: 3.2em;
+    color: white;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.habit-name {
+    color: white;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.delete-btn {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+.trashcan-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.centered-trashcan-icons {
+    position: absolute;
+    z-index: 20;
+    right: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5em;
+}
+
+.btn-next a {
+    text-decoration: none;
+    padding-left: 0.5em;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-previous a {
+    text-decoration: none;
+    padding-right: 0.5em;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    color: #dea4ff;
+
+}
+
+.dashboard-add-btn-habit {
+    padding-bottom: 0.5em;
+}
+
+.delete-account-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-account-btn a {
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto Light", sans-serif;
+}
+
+.dashboard-logout-scope {
+    padding-bottom: 0.5em;
+}
+
+.outer-add-btn-and-logout-btn-scope {
+    position: absolute;
+    top: 370px;
+    left: 860px;
+    z-index: 21;
+}
+

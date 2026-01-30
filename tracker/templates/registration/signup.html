@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="{% static 'css/sign_up_style.css' %}">
+</head>
+<body class="bg-light">
+    <!-- Outer container -->
+  <div class="outer-container">
+      <div class="shadow-box-sign-up-form">
+          <div class="outer-scope-centered">
+                <div class="signup-window">
+                    <div class="card-title">
+                        <h3>Sign Up</h3>
+
+                         <form method="POST" action="{% url 'signup' %}">
+                             {% csrf_token %}
+                             <div class="sign-up-data">
+                                  <label>
+                                     <input type="text" name="username" placeholder="Username" required>
+                                  </label>
+                                 {% if form.username.errors %}
+                                  <ul class="errorlist">
+                                    {% for error in form.username.errors %}
+                                      <li>{{ error }}</li>
+                                    {% endfor %}
+                                  </ul>
+                                {% endif %}
+                             
+                                  <label>
+                                      <input type="password" name="password1" placeholder="Password" required>
+                                  </label>
+                                    {% if form.password1.errors %}
+                                       <ul class="errorlist">
+                                            {% for error in form.password1.errors %}
+                                              <li>{{ error }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                             
+                                  <label>
+                                      <input type="password" name="password2" placeholder="Confirm Password" required>
+                                  </label>
+                                  {% if form.password2.errors %}
+                                  <ul class="errorlist">
+                                    {% for error in form.password2.errors %}
+                                      <li>{{ error }}</li>
+                                    {% endfor %}
+                                  </ul>
+                                {% endif %}
+                             </div>
+                               {% if form.non_field_errors %}
+                                   <ul class="errorlist">
+                                      {% for error in form.non_field_errors %}
+                                        <li>{{ error }}</li>
+                                      {% endfor %}
+                                   </ul>
+                               {% endif %}
+                              <div class="signup-btn">
+                                <button type="submit" class="sign-up-btn">Create Account</button>
+                              </div>
+                         </form>
+
+                         <div class="register-account">
+                            <span>Already have an account? <a href="{% url 'login' %}">Log in</a></span>
+                         </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+    
+
+</body>
+</html>

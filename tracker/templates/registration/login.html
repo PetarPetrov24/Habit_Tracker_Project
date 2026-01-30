@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Habit Tracker</title>
+  <link rel="stylesheet" href="{% static 'css/login_page_style.css' %}">
+</head>
+<body class="bg-light">
+    <div class="login-image-above">
+        <img src="{% static 'photos/upside-login-image.jpg' %}" alt="upside-login-image">
+    </div>
+    <div class="outer-container">
+            <div class="shadow-box-login-form">
+                <div class="outer-scope-centered">
+                <div class="login-window">
+                    <div class="card-title">
+                        <form method="POST" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="form-field">
+                                        {% if form.non_field_errors %}
+                                            <div class="error">
+                                                {{ form.non_field_errors }}
+                                            </div>
+                                        {% endif %}
+                                <label for="id_username"></label><input type="text" name="username" id="id_username" placeholder="Username" value="" required>
+                                       
+                            </div>
+
+                            <div class="form-field">
+                                <label for="id_password"></label><input type="password" name="password" id="id_password" placeholder="Password" required>
+                            </div>
+                            <div class="login-btn">
+                                <button type="submit" class="btn-login-btn">Login</button>
+                            </div>
+                       </form>
+                        <div class="register-account">
+                            <span>
+                                Don't have an account? <a href="{% url 'signup' %}">Sign up</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

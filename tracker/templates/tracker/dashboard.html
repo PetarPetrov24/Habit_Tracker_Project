@@ -1,0 +1,116 @@
+{% load tracker_extras %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard_style.css' %}">
+</head>
+<body>
+    <div class="dashboard-outer-container">
+        <div class="shadow-box-dashboard-form">
+            <div class="dashboard-outer-scope-centered">
+                <div class="dashboard-window">
+                    <div class="dashboard-card-title">
+                        <h3>Welcome, {{ user.username|capfirst }}</h3>
+                        {% csrf_token %}
+                        {% for habit in page_obj %}
+                            {% with logs|get_item:habit.id as log %}
+                                <div class="habit-rows-centered">
+                                                                    <div class="habit-row" id="habit-{{ habit.id }}">
+                                    <form method="post" action="{% url 'mark_complete' %}">
+                                        <label>
+                                            <span class="habit-content">
+                                                <input type="checkbox" name="habit_ids" value="{{ habit.id }}"
+                                                      {% if log and log.completed %}checked{% endif %}>
+
+                                                <span class="habit-checkbox-data">
+                                                    <span class="habit-name">
+                                                        <strong>Habit:</strong> {{ habit.icon }} {{ habit.name|capfirst }}
+                                                    </span>
+                                                        <br>
+                                                      <span class="category">
+                                                          <strong>Category:</strong> {{ habit.category|capfirst }}</span>
+                                                        <br>
+                                                      <span class="habit-data">
+                                                          <strong>Frequency:</strong> {{ habit.frequency|capfirst }}
+                                                          · {{ habit.target_per_day }}x/day
+                                                      </span>
+                                                        <br>
+                                                        <span class="difficulty">
+                                                            <strong>Difficulty:</strong> {{ habit.difficulty|capfirst }}</span>
+                                                </span>
+                                            
+                                            </span>
+                                        
+                                        </label>
+                                    </form>
+                                        <div class="centered-trashcan-icons">
+                                            <form method="post" action="{% url 'delete_habit' habit.id %}" style="display:inline;">
+                                                {% csrf_token %}
+                                                <button type="button" class="delete-btn" data-habit-id="{{ habit.id }}">
+                                                    <img src="{% static 'photos/delete.png' %}" alt="deleting-icon" class="trashcan-icon">
+                                                </button>
+                                            </form>
+                                        </div>
+                                </div>  
+                            {% endwith %}
+                        {% endfor %}
+
+                        <div class="pagination">
+                            <div class="btn-previous">
+                                {% if page_obj.has_previous %}
+                                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                            {% endif %}
+                            </div>
+
+                            <span>Page {{ page_obj.number }} of&nbsp;&nbsp;{{ page_obj.paginator.num_pages }}</span>
+
+                            <div class="btn-next">
+                                {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                            {% endif %}
+                            </div>
+
+                        </div>
+                                </div>
+                        {% block content %}
+                            <div class="outer-add-btn-and-logout-btn-scope">
+                                <div class="dashboard-add-btn-habit">
+                                    <form method="post" action="{% url 'add_habit' %}">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button type="submit" class="btn-add-habit">Add Habit</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="dashboard-logout-scope">
+                                    <form method="post" action="{% url 'logout' %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn-logout">Logout</button>
+                                    </form>
+                                </div>
+                                
+                                    <div class="delete-account-btn">
+                                    <a href="{% url 'delete_account' %}" class="btn btn-danger">Delete My Account</a>
+                                </div>
+                            </div>
+                        {% endblock %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+  // Generate URL pattern from Django template system
+  const deleteUrlPattern = "{% url 'delete_habit' 0 %}".slice(0, -2);
+</script>
+<script src="{% static 'js/delete_habit.js' %}"></script>
+</body>
+</html>

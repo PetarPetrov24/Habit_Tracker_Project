@@ -1,0 +1,70 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/add_habit_style.css' %}">
+</head>
+<body>
+    <div class="habit-outer-container">
+        <div class="shadow-box-add-habit-form">
+            <div class="habit-outer-scope-centered">
+                <div class="habit-login-window">
+                    <div class="habit-card-title">
+                        <h3>Add New Habit</h3>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <p>
+                              {{ form.name.label_tag }}
+                              {{ form.name }}
+                              {{ form.name.errors }}
+                            </p>
+                        
+                            <p>
+                              {{ form.category.label_tag }}
+                              {{ form.category }}
+                            </p>
+                        
+                            <p>
+                              {{ form.icon.label_tag }}
+                              {{ form.icon }}
+                            </p>
+                        
+                            <p>
+                              {{ form.frequency.label_tag }}
+                              {{ form.frequency }}
+                            </p>
+                        
+                            <p>
+                              {{ form.target_per_day.label_tag }}
+                              {{ form.target_per_day }}
+                              {{ form.target_per_day.errors }}
+                            </p>
+                        
+                            <p>
+                              {{ form.difficulty.label_tag }}
+                              {{ form.difficulty }}
+                            </p>
+                            <div class="add-habit-scope">
+                                <button type="submit" class="btn-add-habit">Add Habit</button>
+                            </div> 
+                        </form>
+                        <div class="back-to-dashboard">
+                            <button>
+                                <a href="{% url 'dashboard' %}">Back to Dashboard</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "tracker/dashboard.html" %}
+{% load tracker_extras %}
+{% load static %}
+
+{% block title %}
+Dashboard Successful Added Habit
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="outer-btns-scope">
+
+    <div class="dashboard-add-btn-habit">
+        <form method="post" action="{% url 'add_habit' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-add-habit">Add Habit</button>
+        </form>
+    </div>
+
+    <div class="dashboard-logout-scope">
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-logout">Logout</button>
+        </form>
+    </div>
+
+    <div class="delete-account-btn">
+        <a href="{% url 'delete_account' %}" class="btn btn-danger">
+            Delete My Account
+        </a>
+    </div>
+
+</div>
+{% endblock %}
