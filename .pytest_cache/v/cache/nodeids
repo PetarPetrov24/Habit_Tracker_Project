@@ -1,0 +1,16 @@
+[
+  "Habit_Tracker/Habit_Tracker/tracker/tests/test_views.py::test_home_view",
+  "Habit_Tracker/tracker/tests/test_views.py::test_home_view",
+  "tracker_app/tests/test_login.py::test_false_login_user",
+  "tracker_app/tests/test_login.py::test_validating_two_passwords_while_user_register",
+  "tracker_app/tests/test_models.py::test_habit_creation",
+  "tracker_app/tests/test_models.py::test_habit_log_complete_option",
+  "tracker_app/tests/test_models.py::test_habit_log_creation",
+  "tracker_app/tests/test_models.py::test_model_creation",
+  "tracker_app/tests/test_models.py::test_using_fixture",
+  "tracker_app/tests/test_username_validation.py::test_empty_username_error_field",
+  "tracker_app/tests/test_username_validation.py::test_empty_username_field",
+  "tracker_app/tests/test_username_validation.py::test_username_below_six_characters_field",
+  "tracker_app/tests/test_username_validation.py::test_username_using_special_symbols_error",
+  "tracker_app/tests/test_views.py::test_home_view"
+]

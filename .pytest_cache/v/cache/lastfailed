@@ -1,0 +1,6 @@
+{
+  "Habit_Tracker/tracker/tests/test_models.py": true,
+  "Habit_Tracker/Habit_Tracker/tracker/tests/test_models.py": true,
+  "tracker_app/tests/test_models.py::test_model_creation": true,
+  "tracker_app/tests/test_models.py::test_using_fixture": true
+}
